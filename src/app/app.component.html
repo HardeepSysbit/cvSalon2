@@ -115,8 +115,12 @@
        
     </div>
 
+    <div  *ngIf="docs.length > 0" fxLayout="row" style="text-align: center;">
+        Documents to be uploaded :
+    </div>
+
      
-    <div *ngIf="docs.length > 0"> Documents to be uploaded : </div>
+    <!-- <div *ngIf="docs.length > 0"> Documents to be uploaded : </div> -->
     <ol>
         <div *ngFor="let doc of docs;">
             <li> {{doc.docTable}} : {{doc.docName}} </li>
