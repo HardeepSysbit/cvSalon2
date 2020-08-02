@@ -1,0 +1,362 @@
+.bg { 
+		
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999; 
+    background-image: url('../../../assets/imgs/bg.jpg');
+   
+      
+
+}
+
+.mainContent {
+    margin-top: 1px; /* Add a top margin to avoid content overlay */
+    color:white;
+   
+    font-size:12px;
+    padding:1px ;
+    height: 100%;
+  }
+
+  .boxTitleTop  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 77%; 
+    left: 1%;
+    height:80px;
+    top: 14%; 
+    display: block;
+    position: absolute;
+    color: black;
+   }
+  
+   .boxTitleTop-gt-xs {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 77%; 
+    left: 5%;
+    height:80px;
+    top: 14%; 
+    display: block;
+    position: absolute;
+    color: black;
+    
+  
+   }
+
+   .box  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 450px; 
+    left: 1%;
+    height:10%;
+    top: 35%; 
+    display: block;
+    position: absolute;
+    font-size: 20px;
+    color:black;
+    padding: 0.8em;
+    border-radius: 25px;
+   }
+
+   .boxMoe  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 20%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+   .iconMoe {
+    left: 210px;
+    top: 22%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+
+
+   .box0  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 28%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+   .icon0 {
+    left: 210px;
+    top: 30%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+
+
+
+   .box1  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 36%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+   .icon1 {
+    left: 210px;
+    top: 38%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+
+   .box2  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 44%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+
+   .icon2 {
+    left: 210px;
+    top: 46%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+  
+
+
+   .box3  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 52%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+
+   .icon3 {
+    left: 210px;
+    top: 54%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+  
+   .box4  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 60%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+   .icon4 {
+    left: 210px;
+    top: 62%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+  
+
+   .box5  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 68%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+   .icon5 {
+    left: 210px;
+    top: 70%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+
+
+   .box6  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 76%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+
+   
+   .icon6 {
+    left: 210px;
+    top: 78%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+  
+
+
+   .box7  {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 220px; 
+    left: 15px;
+    height:7%;
+    top: 84%; 
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    color: orange;
+    padding: 0.8em;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+   }
+
+ 
+
+   .icon7 {
+    left: 210px;
+    top: 86%; 
+    position: absolute;
+    background: transparent;
+    color: orange;
+   }
+
+  
+   label {
+     background-color: black;
+     color: white;
+   }
+
+   // For Optimus Minds
+   .chkBoxes {
+    display: grid;
+    grid-template-columns: 30px 2fr 30px 2fr;
+    grid-auto-flow: dense;
+    height: 250px;
+    margin-left: 5px;
+  }
+
+  .leftA {
+    grid-column: 1 / 2;
+    color: black;
+    background-color: white;
+   }
+
+   .rightA {
+    margin-top: 0px;
+    grid-column: 2 / 3;
+    color: black;
+    font-size: 100%;
+    background-color: white;
+   
+   }
+  
+   .leftB {
+    grid-column: 3 / 4;
+   color: black;
+   background-color: white;
+ 
+  
+  }
+
+  
+  .rightB {
+    margin-top: 0px;
+    color: black;
+    
+    font-size: 100%;
+    grid-column: 4 / 5;
+    background-color: white;
+   }

@@ -1,0 +1,240 @@
+<div class="mainContent"   id="cvSalon">
+
+
+    <div style="background-color: black;color:black" class="cssLeftWysiwyg" fxFlex="2 1 30%" >
+  
+        <img [src]="photo" alt="My Photo">
+
+
+        <div class="cssName">
+          {{name}}
+        </div>
+    
+        <hr />
+        
+        <div class="cssTitle" *ngIf="aboutMe">
+          ABOUT ME
+        </div>
+    
+        <div class="cssText">
+          <div [innerHTML]="aboutMe"></div>
+        </div>
+    
+        <div *ngIf="aboutMe">
+          <hr />
+        </div>
+    
+    
+        <div class="cssTitle" *ngIf="skills.length > 0">
+          SKILLS:
+        </div>
+    
+        <div *ngFor="let skill of skills;"  class="cssText">
+          <div fxLayout="column" fxLayoutAlign="center center">
+    
+            {{skill.title}}
+    
+            <div class="cssText" *ngIf="skill.rate == '1 Star'">
+              <i class="material-icons smallIcon">star</i>
+    
+              <span style="color:gray;">
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+              </span>
+            </div>
+    
+    
+            <div class="cssText" *ngIf="skill.rate == '2 Stars'">
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+    
+              <span style="color:gray;">
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+              </span>
+    
+            </div>
+            <div class="cssText" *ngIf="skill.rate == '3 Stars'">
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <span style="color:gray;">
+                <i class="material-icons smallIcon">star</i>
+                <i class="material-icons smallIcon">star</i>
+              </span>
+    
+            </div>
+            <div class="cssText" *ngIf="skill.rate == '4 Stars'">
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <span style="color:gray;">
+    
+                <i class="material-icons smallIcon">star</i>
+              </span>
+    
+            </div>
+            <div class="cssText" *ngIf="skill.rate == '5 Stars'">
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+              <i class="material-icons smallIcon">star</i>
+    
+    
+            </div>
+    
+    
+    
+          </div>
+    
+    
+        </div>
+    
+        <div *ngIf="skills.length > 0">
+          <hr />
+        </div>
+
+        <div class="cssTitle" *ngIf="programs.length > 0">
+          Qualified to train programs in
+        </div>
+    
+        <div *ngFor="let program of programs;" class="cssText">
+          <div fxLayout="column" fxLayoutAlign="center center">
+            {{program}}
+          </div>
+        </div>
+    
+    
+        <div *ngIf="programs.length > 0">
+          <hr />
+        </div>
+    
+        <div fxLayout="row" fxLayoutAlign="center center">
+    
+          <i class="material-icons" *ngIf='mobileNbr'>phone</i> {{mobileNbr}}
+        </div>
+    
+        <div fxLayout="row" fxLayoutAlign="center center">
+    
+          <i class="material-icons" *ngIf='email'>email</i> {{email}}
+        </div>
+    
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <i class="material-icons" *ngIf='address'>home</i>
+        </div>
+    
+        <div fxLayout="columns" fxLayoutAlign="center center">
+          <div [innerHTML]="address"></div>
+        </div>
+    
+      </div>
+
+      
+      
+
+      
+        <div style="background-color: white;color:black" fxFlex="2 1 70%" fxLayout="column">
+    
+            
+    <!-- Education -->
+    <div class="cssTitleRight" *ngIf="edus.length > 0">
+        EDUCATION:
+      </div>
+      <ul>
+        <div *ngFor="let edu of edus;">
+          <li>{{edu.title}} </li>
+  
+  
+          <div [innerHTML]="edu.note"></div>
+  
+          <br>
+        </div>
+      </ul>
+  
+      <!-- Experience -->
+      <div class="cssTitleRight" *ngIf="exps.length > 0">
+        EXPERIENCE:
+      </div>
+      <ul>
+        <div *ngFor="let exp of exps;">
+          <li>{{exp.title}} </li>
+  
+  
+          <div [innerHTML]="exp.note"></div>
+  
+          <br>
+        </div>
+      </ul>
+  
+  
+      <!-- Skills -->
+  
+  
+      <!-- Certs -->
+      <div class="cssTitleRight" *ngIf="certs.length > 0">
+        CERTIFICATIONS:
+      </div>
+  
+      <div *ngIf="clientName=='cvSalon'">
+        <ul>
+          <div *ngFor="let cert of certs;">
+  
+            <li>{{cert.title}} </li>
+  
+  
+            <div [innerHTML]="cert.note"></div>
+  
+            <br>
+          </div>
+        </ul>
+      </div>
+  
+    
+      <div *ngIf="clientName=='optimusMinds'">
+        <ul>
+  
+          <div *ngFor="let program of programs;">
+  
+              <div class="cssLabel" *ngIf="programHasCert(program)" >
+                 {{ program }} 
+              </div>
+            <ul>
+            <div *ngFor="let cert of certs;">
+              <div *ngIf="cert.program == program">
+                <li>{{cert.title}} </li>
+              </div>
+            </div>
+          </ul>
+  
+            <br>
+          </div>
+        </ul>
+      </div>
+  
+  
+      <!-- Certs -->
+      <div class="cssTitleRight" *ngIf="acheives.length > 0">
+        ACHIEVEMENTS :
+      </div>
+      <ul>
+        <div *ngFor="let acheive of acheives;">
+          <li>{{acheive.title}} </li>
+  
+  
+          <div [innerHTML]="acheive.note"></div>
+  
+          <br>
+        </div>
+      </ul>
+  
+
+    </div>
+
+</div>
+ 
+ 

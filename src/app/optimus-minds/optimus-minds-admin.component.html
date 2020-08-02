@@ -1,0 +1,182 @@
+
+<!-- <div fxLayout="row">
+      
+      <div fxFlex="5" fxHide fxShow.gt-xs></div> 
+    
+      
+      <div fxFlex fxLayout="column">
+    
+    
+    
+    
+    </div> 
+     <div fxFlex="5" fxHide fxShow.gt-xs></div> 
+    </div> 
+    
+     -->
+    
+    
+    <div fxLayout="row">
+          
+      <div fxFlex="5" fxHide fxShow.gt-xs></div> 
+    
+    
+      <div fxFlex fxLayout="column">
+    
+        <div  class="containerChk">
+    
+          <input  class="leftA" id="ai" name="ai" type="checkbox"  [(ngModel)] = "aiChk" />
+          <label  class="rightA" for="ai">Artificial Intelligence</label>
+          
+          <input class="leftA" id="atRisk" name="atRisk" type="checkbox" [(ngModel)] = "atRiskChk" />
+          <label class="rightA" for="atRisk">At Risk</label>
+          
+          <input class="leftA" id="career" name="career" type="checkbox" [(ngModel)] = "careerChk" />
+          <label class="rightA" for="career">Career Perparation</label> 
+          
+          <input class="leftA" id="dance" name="dance" type="checkbox" [(ngModel)] = "danceChk" />
+          <label class="rightA" for="dance">Dance</label> 
+          
+          <input class="leftA" id="drama" name="drama" type="checkbox" [(ngModel)] = "dramaChk"  />
+          <label class="rightA" for="drama">Drama</label> 
+          
+          <input class="leftA" id="it" name="it" type="checkbox" [(ngModel)] = "itChk" />
+          <label class="rightA" for="it">IT\Multimedia</label>
+          
+          <input class="leftA" id="skills" name="skills" type="checkbox" [(ngModel)] = "skillsChk" />
+          <label class="rightA" for="skills">Life Skills\Soft Skills</label>
+          
+          <input class="leftB" id="tongue" name="tongue" type="checkbox" [(ngModel)] = "tongueChk" />
+          <label class="rightB" for="tongue">Mother Tongue</label>
+          
+          <input class="leftB" id="music" name="music" type="checkbox" [(ngModel)] = "musicChk" />
+          <label class="rightB" for="music">Music</label>
+          
+          <input class="leftB" id="outdoor" name="outdoor" type="checkbox" [(ngModel)] = "outdoorChk" />
+          <label class="rightB" for="outdoor">Outdoor Education</label>
+          
+          
+          <input class="leftB" id="sports" name="sports" type="checkbox" [(ngModel)] = "sportsChk" />
+          <label class="rightB" for="sports">Sports</label>
+          
+          <input class="leftB" id="visual" name="visual" type="checkbox" [(ngModel)] = "visualChk" />
+          <label class="rightB" for="visual">Visual Arts</label>
+          
+          
+        
+        
+           </div>
+       
+          </div>
+       
+        </div>
+    
+        
+        <div fxLayout="row"  *ngIf="trainersExist">
+          
+          <div fxFlex="5" fxHide fxShow.gt-xs></div>
+      
+ 
+  
+
+    <table fxFlex="1 1 auto" > 
+      <!-- <caption>Relevant Training Qualifications</caption> -->
+       <tbody style='font-size: 12px;'>
+    
+        <thead style='font-size: 12px;'>
+          <tr>
+            <th class="col1">Name</th> 
+            <th class="col2">Email</th> 
+            
+            <th class="col4">Mobile Number</th>
+            <!-- <th class="col5">Program</th> -->
+            
+           </tr> 
+          </thead>
+       
+         
+  
+          <tr *ngFor="let trainer of trainers;" (click)="onTrainerPick(trainer._id)"
+                   [ngClass] = "{'highlight' : trainer._id === trainerPickId}">
+         
+    
+          <td class="col1">{{trainer.name}}</td> 
+          <td class="col2">{{trainer.email}}</td> 
+        
+          <!-- <td class="col3">{{trainExp.trainName}}</td> -->
+          <td class="col4">{{trainer.mobileNbr}}</td> 
+        
+        </tr> 
+       
+     
+     
+    </tbody>
+    
+      
+      </table>
+    
+    </div>
+
+
+    <div fxLayout="row"  *ngIf="trainersExist">
+          
+      <div fxFlex="5" fxHide fxShow.gt-xs></div>
+
+      <p>Documents submitted</p>
+    
+    </div>
+
+
+    <div fxLayout="row"  *ngIf="trainersExist">
+
+      <div fxFlex="5" fxHide fxShow.gt-xs></div>
+
+      <table fxFlex="1 1 auto" > 
+        <!-- <caption>Relevant Training Qualifications</caption> -->
+         <tbody style='font-size: 12px;'>
+      
+          <thead style='font-size: 12px;'>
+            <tr>
+              <th class="col1x">Title</th> 
+              <!-- <th class="col2">Program</th>  -->
+              
+              <th class="col4x">File</th>
+              <!-- <th class="col5">Program</th> -->
+              
+             </tr> 
+            </thead>
+         
+           
+      
+            <tr *ngFor="let doc of docs | programfilter: programs" (click)="onDocPick(doc.folder,doc.file)"
+                     [ngClass] = "{'highlight' : doc.file === docFile}" >
+           
+
+             <!-- <span *ngIf="programs.indexOf(doc.program) > -1 || doc.program == 'moe'">  -->
+
+
+            <td class="col1x">{{doc.title}}</td> 
+            <!-- <td class="col2">{{doc.program}}</td>  -->
+          
+            <!-- <td class="col3">{{trainExp.trainName}}</td> -->
+            <td class="col4x">{{doc.file}}</td> 
+
+            <!-- </span>  -->
+          
+          </tr> 
+         
+         
+       
+      </tbody>
+      
+        
+        </table>
+    
+      
+      </div>
+     
+    
+          
+    
+    
+    

@@ -1,0 +1,72 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+     "navbar"
+     "main"  
+     "blank"  
+    "footer"
+    ;
+}
+
+app-header {
+    grid-area: header;
+}
+
+app-navbar {
+    grid-area: navbar;
+  
+   
+}
+
+router-outlet  {
+    grid-area: main;
+}
+
+app-footer {
+    grid-area: footer;
+}  
+
+ 
+.checkboxes label {
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+    background-color: white;
+    font-size: 14px;
+
+  }
+  .checkboxes input {
+    vertical-align: middle;
+  }
+  .checkboxes label span {
+    vertical-align: middle;
+  }
+
+  .chkBoxes {
+    display: grid;
+    grid-template-columns: 30px 2fr;
+    grid-auto-flow: dense;
+    
+    margin-left: 5px;
+  }
+
+  .leftA {
+    grid-column: 1 / 2;
+    color: black;
+    background-color: white;
+   }
+
+   .rightA {
+    margin-top: 0px;
+    grid-column: 2 / 3;
+    color: black;
+    font-size: 100%;
+    background-color: white;
+   
+   }
+  

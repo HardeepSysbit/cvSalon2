@@ -1,0 +1,692 @@
+<div class="mainContent">
+  <div class="bg" style="height:80vh;">
+
+
+    <div *ngIf="clientName=='optimusMinds'">
+
+      <div class="boxMoe" (click)="onMoe()">
+        MOE License
+      </div>
+
+      <div class="iconMoe" (click)="onMoe()">
+        <i class="material-icons">play_arrow</i>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="box0" (click)="onProfile()">
+      Personnal information
+    </div>
+
+
+
+
+
+
+
+    <div class="box1" (click)="onAboutMe()">
+      About Me
+    </div>
+
+
+    <div class="box2" (click)="photo.click()">
+      Photo
+      <input #photo type="file" (change)="onAttach($event,'photo')" style="display:none;" />
+    </div>
+
+    <div class="box3" (click)="onEdu()">
+      Educational information
+    </div>
+
+    <div class="box4" (click)="onExp()">
+      Work Experiences
+    </div>
+
+    <div class="box5" (click)="onCert()">
+      Certifications
+    </div>
+
+
+    <div class="box6" (click)="onSkill()">
+      Skills
+    </div>
+
+
+    <div class="box7" (click)="onAcheive()">
+      Acheivements
+    </div>
+
+
+
+
+    <div class="icon0" (click)="onProfile()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+
+    <div class="icon1" (click)="onAboutMe()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+    <div class="icon2" (click)="photo.click()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+    <div class="icon3" (click)="onEdu()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+    <div class="icon4" (click)="onExp()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+
+    <div class="icon5" (click)="onCert()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+    <div class="icon6" (click)="onSkill()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+    <div class="icon7" (click)="onAcheive()">
+      <i class="material-icons">play_arrow</i>
+    </div>
+
+
+
+  </div>
+</div>
+
+<dialog id="dlgProfile">
+
+  <div fxFlex fxLayout="column">
+
+
+    <label for="name">Your Name *</label>
+    <input id="name" name="name" type="text" [(ngModel)]="name">
+
+
+    <div fxLayout="row wrap">
+
+
+      <div fxLayout="column">
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" [(ngModel)]="dob" />
+      </div>
+
+      <div fxLayout="column">
+        <label for="mobileNbr">Mobile# *</label>
+        <input id="mobileNbr" name="mobileNbr" type="text" [(ngModel)]="mobileNbr" />
+      </div>
+
+
+    </div>
+
+
+    <label for="email">Email</label>
+    <input disabled id="email" name="email" type="text" [(ngModel)]="email" />
+
+
+
+
+    <label for="note">Address</label>
+
+    <quill-editor class="richText" [(ngModel)]="address" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button class="button-3d" (click)="onCancelProfile()">Cancel</button>
+      <button class="button-3d" (click)="onSaveProfile()">Save</button>
+
+    </div>
+  </div>
+
+</dialog>
+
+<dialog id="dlgAboutMe">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label for="note">About Me</label>
+
+    <quill-editor class="richText" [(ngModel)]="aboutMe" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button class="button-3d" (click)="onCancelAboutMe()">Cancel</button>
+      <button class="button-3d" (click)="onSaveAboutMe()">Save</button>
+
+    </div>
+  </div>
+</dialog>
+
+
+<dialog id="dlgEdu">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label  *ngIf="!newEdu" class="labelData" for="edu">Select Certification</label>
+    <select *ngIf="!newEdu" class="inputData" id="edu" name="edu" (change)="onSelEdu('cvSalon',$event.target.value)" [(ngModel)]="edu">
+      <option [value]="edu" *ngFor="let edu of cboEdus">
+        {{edu}}
+      </option>
+    </select>
+
+
+    <label *ngIf="newEdu" for="eduTitle">Certification</label>
+    <input *ngIf="newEdu" id="eduTitle" name="eduTitle" type="text" [(ngModel)]="eduTitle" />
+
+
+    <label for="eduNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="eduNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button *ngIf="!newEdu"  class="button-3d" (click)="onNewEdu('cvSalon')">New</button>
+      <button *ngIf="!newEdu"  class="button-3d" (click)="onDelEdu('cvSalon')">Delete</button>
+      <button class="button-3d" (click)="onExitEdu('cvSalon')">Exit</button>
+      <button class="button-3d" (click)="onSaveEdu('cvSalon')">Save</button> 
+
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+<!-- <dialog id="dlgExp">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label class="labelData" for="exp">Select Experience</label>
+    <select class="inputData" id="exp" name="exp" (change)="onSelExp($event.target.value)" [(ngModel)]="exp">
+      <option [value]="exp" *ngFor="let exp of cboExps">
+        {{exp}}
+      </option>
+    </select>
+
+
+    <label *ngIf="showExpTitle" for="expTitle">Experience</label>
+    <input *ngIf="showExpTitle" id="expTitle" name="expTitle" type="text" [(ngModel)]="expTitle" />
+
+
+    <label for="expNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="expNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button class="button-3d" (click)="onCancelExp()">Cancel</button>
+      <button *ngIf="!showExpTitle" class="button-3d" (click)="onDelExp()">Remove</button>
+      <button class="button-3d" (click)="onSaveExp()">Save</button>
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+ -->
+
+
+ <dialog id="dlgExp">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label  *ngIf="!newExp" class="labelData" for="exp">Select Certification</label>
+    <select *ngIf="!newExp" class="inputData" id="exp" name="exp" (change)="onSelExp('cvSalon',$event.target.value)" [(ngModel)]="exp">
+      <option [value]="exp" *ngFor="let exp of cboExps">
+        {{exp}}
+      </option>
+    </select>
+
+
+    <label *ngIf="newExp" for="expTitle">Certification</label>
+    <input *ngIf="newExp" id="expTitle" name="expTitle" type="text" [(ngModel)]="expTitle" />
+
+
+    <label for="expNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="expNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button *ngIf="!newExp"  class="button-3d" (click)="onNewExp('cvSalon')">New</button>
+      <button *ngIf="!newExp"  class="button-3d" (click)="onDelExp('cvSalon')">Delete</button>
+      <button class="button-3d" (click)="onExitExp('cvSalon')">Exit</button>
+      <button class="button-3d" (click)="onSaveExp('cvSalon')">Save</button> 
+
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+<dialog id="dlgSkill">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label  *ngIf="!newSkill" class="labelData" for="skill">Select Certification</label>
+    <select *ngIf="!newSkill" class="inputData" id="skill" name="skill" (change)="onSelSkill('cvSalon',$event.target.value)" [(ngModel)]="skill">
+      <option [value]="skill" *ngFor="let skill of cboSkills">
+        {{skill}}
+      </option>
+    </select>
+
+
+    <label *ngIf="newSkill" for="skillTitle">Certification</label>
+    <input *ngIf="newSkill" id="skillTitle" name="skillTitle" type="text" [(ngModel)]="skillTitle" />
+
+
+   <!--  <label for="skillNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="skillNote" [modules]="{ toolbar: false }">
+    </quill-editor> -->
+
+
+    <label for="skillRate">Skill Rating</label>
+
+    <select class="inputData" id="skillRate" name="skillRate" (change)="onSelSkillRate($event.target.value)"
+      [(ngModel)]="skillRate">
+      <option [value]="skillRate" *ngFor="let skillRate of cboSkillRates">
+        {{skillRate}}
+      </option>
+    </select>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button *ngIf="!newSkill"  class="button-3d" (click)="onNewSkill('cvSalon')">New</button>
+      <button *ngIf="!newSkill"  class="button-3d" (click)="onDelSkill('cvSalon')">Delete</button>
+      <button class="button-3d" (click)="onExitSkill('cvSalon')">Exit</button>
+      <button class="button-3d" (click)="onSaveSkill('cvSalon')">Save</button> 
+
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+<dialog id="dlgAcheive">
+
+  <div fxFlex fxLayout="column">
+
+
+
+    <label  *ngIf="!newAcheive" class="labelData" for="acheive">Select Certification</label>
+    <select *ngIf="!newAcheive" class="inputData" id="acheive" name="acheive" (change)="onSelAcheive('cvSalon',$event.target.value)" [(ngModel)]="acheive">
+      <option [value]="acheive" *ngFor="let acheive of cboAcheives">
+        {{acheive}}
+      </option>
+    </select>
+
+
+    <label *ngIf="newAcheive" for="acheiveTitle">Certification</label>
+    <input *ngIf="newAcheive" id="acheiveTitle" name="acheiveTitle" type="text" [(ngModel)]="acheiveTitle" />
+
+
+    <label for="acheiveNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="acheiveNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+    <br>
+
+    <div *ngIf="attachAcheive" style="border: thin solid black;" fxLayoutAlign="center center">
+      <span> <i class="material-icons" style="vertical-align: -6px;">attachment</i> {{attachAcheive}}    </span>
+     </div>
+
+     
+    <div *ngIf="clientName=='optimusMinds'" fxLayout="row" fxLayoutAlign="center center">
+
+      <button type="button" (click)="acheiveFile.click()">
+        <span>Attach Document</span>
+        <input #acheiveFile type="file" (change)="onAttach($event,'acheive')" style="display:none;" />
+      </button>
+
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button *ngIf="!newAcheive"  class="button-3d" (click)="onNewAcheive('cvSalon')">New</button>
+      <button *ngIf="!newAcheive"  class="button-3d" (click)="onDelAcheive('cvSalon')">Delete</button>
+      <button class="button-3d" (click)="onExitAcheive('cvSalon')">Exit</button>
+      <button class="button-3d" (click)="onSaveAcheive('cvSalon')">Save</button> 
+
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+
+
+
+
+<!--  <dialog id="dlgSkill">
+
+  <div fxFlex fxLayout="column">
+
+
+    <label class="labelData" for="skill">Select Skill</label>
+    <select class="inputData" id="skill" name="skill" (change)="onSelSkill($event.target.value)" [(ngModel)]="skill">
+      <option [value]="skill" *ngFor="let skill of cboSkills">
+        {{skill}}
+      </option>
+    </select>
+
+
+    <label *ngIf="showSkillTitle" for="skillTitle">Skill</label>
+    <input *ngIf="showSkillTitle" id="skillTitle" name="skillTitle" type="text" [(ngModel)]="skillTitle" />
+
+
+    <label for="skillRate">Skill Rating</label>
+
+    <select class="inputData" id="skillRate" name="skillRate" (change)="onSelSkillRate($event.target.value)"
+      [(ngModel)]="skillRate">
+      <option [value]="skillRate" *ngFor="let skillRate of cboSkillRates">
+        {{skillRate}}
+      </option>
+    </select>
+
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button class="button-3d" (click)="onCancelSkill()">Cancel</button>
+      <button *ngIf="!showSkillTitle" class="button-3d" (click)="onDelSkill()">Remove</button>
+      <button class="button-3d" (click)="onSaveSkill()">Save</button>
+
+    </div>
+  </div>
+
+
+
+
+</dialog> -->
+
+<!-- <dialog id="dlgAcheive">
+
+  <div fxFlex fxLayout="column">
+
+
+    <label class="labelData" for="acheive">Select Acheivement</label>
+    <select class="inputData" id="acheive" name="acheive" (change)="onSelAcheive($event.target.value)"
+      [(ngModel)]="acheive">
+      <option [value]="acheive" *ngFor="let acheive of cboAcheives">
+        {{ acheive }}
+      </option>
+    </select>
+
+
+    <label *ngIf="showAcheiveTitle" for="acheiveTitle">Acheivement</label>
+    <input *ngIf="showAcheiveTitle" id="acheiveTitle" name="acheiveTitle" type="text" [(ngModel)]="acheiveTitle" />
+
+
+    <label for="acheiveNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]=" acheiveNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+
+      <button class="button-3d" (click)="onCancelAcheive ()">Cancel</button>
+      <button *ngIf="!showSkillTitle" class="button-3d" (click)="onDelAcheive ()">Remove</button>
+      <button class="button-3d" (click)="onSaveAcheive ()">Save</button>
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+ -->
+<dialog id="dlgCert">
+
+  <div fxFlex fxLayout="column">
+
+
+    <label *ngIf="!newCert" class="labelData" for="cert">Select Certification</label>
+    <select *ngIf="!newCert" class="inputData" id="cert" name="cert" (change)="onSelCert('cvSalon',$event.target.value)" [(ngModel)]="cert">
+      <option [value]="cert" *ngFor="let cert of cboCerts">
+        {{ cert }}
+      </option>
+    </select>
+
+
+    <label *ngIf="newCert"  for="certTitle">Certification</label>
+    <input *ngIf="newCert"  id="certTitle" name="certTitle" type="text" [(ngModel)]="certTitle" />
+
+
+    <label for="certNote">Description</label>
+
+    <quill-editor class="richText" [(ngModel)]="certNote" [modules]="{ toolbar: false }">
+    </quill-editor>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+<!-- 
+      <button class="button-3d" (click)="onCancelCert()">Cancel</button>
+      <button *ngIf="!showCertTitle" class="button-3d" (click)="onDelCert('dlgCert')">Remove</button>
+      <button class="button-3d" (click)="onSaveCert()">Save</button>
+ -->
+ <br>
+ <hr>
+
+      <button *ngIf="!newCert"  class="button-3d" (click)="onNewCert('cvSalon')">New</button>
+      <button *ngIf="!newCert"  class="button-3d" (click)="onDelCert('cvSalon')">Delete</button>
+      <button class="button-3d" (click)="onExitCert('cvSalon')">Exit</button>
+      <button class="button-3d" (click)="onSaveCert('cvSalon')">Save</button> 
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+<dialog id="dlgCertOptimusMinds">
+
+  <div fxFlex fxLayout="column">
+
+
+    <label *ngIf="!newCert" class="labelData" for="cert">Select Certification</label>
+    <select *ngIf="!newCert" class="inputData" id="cert" name="cert" (change)="onSelCert('optimusMinds', $event.target.value)" [(ngModel)]="cert">
+      <option [value]="cert" *ngFor="let cert of cboCerts">
+        {{ cert }}
+      </option>
+    </select>
+  
+    
+    <label *ngIf="newCert" for="certTitle">Certification</label>
+    <input *ngIf="newCert" id="certTitle" name="certTitle" type="text" [(ngModel)]="certTitle" />
+
+    <label class="labelData" for="cert">Select Program</label>
+    <select class="inputData" id="program" name="program" (change)="onSelProgram($event.target.value)" [(ngModel)]="program">
+      <option [value]="program" *ngFor="let program of programs">
+        {{ program }}
+      </option>
+    </select>
+
+    <br>
+
+    <div *ngIf="attachCert" style="border: thin solid black;" fxLayoutAlign="center center">
+      <span> <i class="material-icons" style="vertical-align: -6px;">attachment</i> {{attachCert}}    </span>
+     </div>
+ 
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+
+      <button type="button" (click)="certFile.click()">
+        <span>Attach Certificate</span>
+        <input #certFile type="file" (change)="onAttach($event,'cert')" style="display:none;" />
+      </button>
+
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="flushRight"></div>
+
+      <button *ngIf="!newCert" class="button-3d" (click)="onNewCert('optimusMinds')">New</button>
+      <button *ngIf="!newCert" class="button-3d" (click)="onDelCert('optimusMinds')">Delete</button>
+      <button class="button-3d" (click)="onExitCert('optimusMinds')">Exit</button>
+      <button class="button-3d" (click)="onSaveCert('optimusMinds')">Save</button> 
+
+    </div>
+  </div>
+
+
+
+
+</dialog>
+
+
+
+<dialog id="dlgMoe">
+
+  <div fxFlex fxLayout="column">
+
+    <label for="moeExpiry">MOE License Expiry Date</label>
+    <input id="moeExpiry" name="moeExpiry" type="date" [(ngModel)]="moeExpiry" />
+
+    <p class="header">Qualified to train programs in : </p>
+
+
+
+    <div class="chkBoxes">
+
+
+      <input class="leftA" id="ai" name="ai" type="checkbox" [(ngModel)]="aiChk" />
+      <label class="rightA" for="ai">Artificial Intelligence</label>
+
+      <input class="leftA" id="atRisk" name="atRisk" type="checkbox" [(ngModel)]="atRiskChk" />
+      <label class="rightA" for="atRisk">At Risk</label>
+
+      <input class="leftA" id="career" name="career" type="checkbox" [(ngModel)]="careerChk" />
+      <label class="rightA" for="career">Career Perparation</label>
+
+      <input class="leftA" id="dance" name="dance" type="checkbox" [(ngModel)]="danceChk" />
+      <label class="rightA" for="dance">Dance</label>
+
+      <input class="leftA" id="drama" name="drama" type="checkbox" [(ngModel)]="dramaChk" />
+      <label class="rightA" for="drama">Drama</label>
+
+      <input class="leftA" id="it" name="it" type="checkbox" [(ngModel)]="itChk" />
+      <label class="rightA" for="it">IT\Multimedia</label>
+
+      <input class="leftA" id="skills" name="skills" type="checkbox" [(ngModel)]="skillsChk" />
+      <label class="rightA" for="skills">Life Skills\Soft Skills</label>
+
+      <input class="leftB" id="tongue" name="tongue" type="checkbox" [(ngModel)]="tongueChk" />
+      <label class="rightB" for="tongue">Mother Tongue</label>
+
+      <input class="leftB" id="music" name="music" type="checkbox" [(ngModel)]="musicChk" />
+      <label class="rightB" for="music">Music</label>
+
+      <input class="leftB" id="outdoor" name="outdoor" type="checkbox" [(ngModel)]="outdoorChk" />
+      <label class="rightB" for="outdoor">Outdoor Education</label>
+
+
+      <input class="leftB" id="sports" name="sports" type="checkbox" [(ngModel)]="sportsChk" />
+      <label class="rightB" for="sports">Sports</label>
+
+      <input class="leftB" id="visual" name="visual" type="checkbox" [(ngModel)]="visualChk" />
+      <label class="rightB" for="visual">Visual Arts</label>
+
+
+
+
+    </div>
+
+
+
+    <div style="border: thin solid black;" fxLayoutAlign="center center">
+      <span> <i class="material-icons" style="vertical-align: -6px;">attachment</i> {{moeFile}}    </span>
+     </div>
+ 
+
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+
+      <button type="button" (click)="moeDoc.click()">
+        <span>Add MOE License*</span>
+        <input #moeDoc type="file" (change)="onAttach($event,'moe')" style="display:none;" />
+      </button>
+
+    </div>
+
+
+    <div fxLayout="row" fxLayoutAlign="center end">
+
+      <!--  <div class="flushRight"></div> -->
+
+      <button class="button-3d" (click)="onCancelMoe()">Cancel</button>
+      <button class="button-3d" (click)="onSaveMoe()">Save</button>
+
+    </div>
+  </div>
+
+
+
+
+</dialog>

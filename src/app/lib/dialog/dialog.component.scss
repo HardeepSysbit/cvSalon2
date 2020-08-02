@@ -1,0 +1,90 @@
+/* MODAL STYLES
+-------------------------------*/
+dialog {
+    /* modals are hidden by default */
+    display: none;
+
+  
+    label {
+        background-color: orange;
+        color: black;
+      }
+
+    button {
+        margin-top: 15px;
+        margin-right: 5px;
+        
+     }
+    
+     
+      
+
+    .dialog {
+    position: fixed;
+   //@extend left: 37%;
+    top: 20%;  
+    //transform: translate(20%, 20%);
+    border: 5px solid orange;
+    width: 360px;
+    border-radius: 5px;
+    //margin-left: auto;
+    
+    left: 50%;
+    margin-left: -180px; 
+
+      /* z-index must be higher than .dialog-background */
+      z-index: 1000;
+        
+      /* enables scrolling for tall modals */
+      overflow: auto;
+ 
+     
+
+      .dialog-body {
+        padding: 5px;
+        background: white;
+        color: black;
+
+        /* margin exposes part of the modal background */
+        margin: 1px;
+    }
+  
+    }
+    
+    /* .dialog .dlgBigWidht {
+        width: 55%;
+    } */
+
+    .dialog-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+        
+        /* z-index must be below .dialog and above everything else  */
+        z-index: 900;
+    }
+
+    .lblY {
+        font-size: 12px;
+    }
+
+    .lblX {
+        font-size: 12px;
+    }
+
+    
+}
+
+body.dialog-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}
+
+

@@ -1,0 +1,237 @@
+
+ @supports (display: grid) {
+ 
+
+  .containerChk {
+    display: grid;
+    grid-template-columns: 30px 2fr 30px 2fr;
+    grid-auto-flow: dense;
+    height: 250px;
+    margin-left: 5px;
+  }
+  .containerData {
+    display: grid;
+    grid-template-columns: 150px 0.1em 2fr;
+    grid-auto-flow: dense;
+    height: 250px;
+  }
+  
+.zindex {
+  background-color: white;
+  z-index: 9999;
+}
+  .containerBtn {
+    display: grid;
+    grid-template-columns: 95% 1fr 1fr 1fr;
+    grid-auto-flow: dense;
+    justify-content: end;
+  }
+
+/*   input[type="checkbox"], input[type="radio"] {
+     // grid-column: 1 / 2;
+      justify-self: start;
+      margin: 0;
+    } 
+
+    label, input[type="checkbox"] + label, input[type="radio"] + label {
+     // grid-column: 2 / 3;  
+      width: auto;
+      padding: 0.25em 1em 0 0;
+      margin: 0;
+      justify-self: start;
+
+    } */
+
+    .header  {
+        margin-left: 5px;
+    }
+  
+    .leftA {
+      grid-column: 1 / 2;
+      color: black;
+      background-color:white;
+     }
+  
+     .rightA {
+      margin-top: 0px;
+      grid-column: 2 / 3;
+      color: black;
+      background-color:white;
+      font-size: 120%;
+     }
+    
+     .leftB {
+     grid-column: 3 / 4;
+     color: black;
+     background-color:white;
+    
+    }
+  
+    .rightB {
+     margin-top: 0px;
+     color: black;
+     background-color:white;
+     font-size: 120%;
+     grid-column: 4 / 5;
+    }
+ 
+  .labelData {
+    grid-column: 1 / 2;
+  }
+
+  .inputData {
+    grid-column: 3 / 4;
+  }
+
+
+}
+
+thead,
+tfoot {
+    background-color: #3f87a6;
+    color: #fff;
+}
+
+tbody {
+    background-color: #e4f0f5;
+}
+
+caption {
+  padding: 10px;
+  caption-side: bottom;
+}
+
+/*  table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: .8rem;
+ 
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 5px 10px;
+}
+
+td {
+  text-align: center;
+}
+
+table tr.highlight {
+  background-color: #4CAF50 !important;
+  color: #ffffff;
+} */
+
+.addExpBtn, .saveExpBtn {
+  grid-column: 4 / 5;
+ 
+}
+
+.delExpBtn, .cancelExpBtn {
+  grid-column: 3 / 4;
+}
+
+.editExptn {
+   grid-column: 2 / 3;
+}
+
+
+table {
+  background-color: white;
+  display: block; /*Required for wrap to work correctly in IE*/
+
+}
+tbody {
+  display: block; /*Required for wrap to work correctly in IE*/
+}
+.child {
+  padding: 5px;
+  margin: 5px;
+  background-color: #eee;
+  border: 3px solid;
+  display: block;
+}
+.container {
+  padding: 2px;
+  background-color: yellow;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+/* .child.one {
+  color: green;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+.child.two {
+  color: purple;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  flex-shrink: 0;
+}
+.child.three {
+  color: red;
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+} */
+.col1 {
+
+  width: 45%;
+}
+.col2 {
+
+  width: 45%;
+}
+.col3 {
+
+  width: 30%;
+}
+.col4 {
+
+  width: 30%;
+  
+}
+
+ .col1x {
+   width: 70%;
+ }
+
+ .col4x {
+   width: 50%;
+ }
+
+
+table tr.highlight {
+  background-color: #4CAF50 !important;
+  color: #ffffff;
+}
+
+
+ /* input:focus + label, textarea:focus + label, select:focus + label {
+  color: #933;
+}
+
+input:checked + label {
+  font-weight: bold;
+} */

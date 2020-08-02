@@ -1,0 +1,22 @@
+
+
+
+<div *ngIf="adminLevel==0" class='container' fxLayout="row" fxLayoutAlign="end start">
+                <button class="button-3d" (click)="onSubmit()">Submit</button>
+                <button class="button-3d" (click)="onPdf()">PDF</button>
+                <!-- <button class="button-3d" (click)="onQry()">Query</button> -->
+               
+</div>
+
+       <div *ngIf="adminLevel !=0" class='container' fxLayout="row" fxLayoutAlign="start start">
+                <button class="button-3d" (click)="onQry()">Query</button>
+                <button class="button-3d" (click)="onPdf()">PDF</button>
+                <button class="button-3d" (click)="onZipPack()">Zip</button>
+      </div>
+        <br>
+
+  
+        
+
+
+

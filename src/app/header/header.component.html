@@ -1,0 +1,147 @@
+<div class="container">
+<header>
+  
+    <div fxLayout="row" fxLayoutAlign="start center" >
+        <!-- GAP -->
+      <div fxFlex="1" ></div> 
+    
+
+        <img [src]="logo" alt="logo" >
+        {{domainName}}
+
+       
+    
+    </div>    
+            
+      
+</header>
+
+</div>
+
+<!-- <jw-modal id="dlgErrOld" class="dlg">
+
+    <div fxFlex fxLayout="column" class="dialog1">
+ 
+        <h1>Errors</h1>
+        
+       <ol>
+           <div *ngFor="let err of errList;"> 
+                    <li>     {{err}}    </li>
+           </div>
+       </ol>
+    
+    
+    
+    <div  fxLayout="row" fxLayoutAlign="end center" class="btn" >
+       
+        <button  (click)="onErrClose();">Ok</button>
+    </div>
+        </div>
+  
+</jw-modal> 
+ -->
+<!-- <jw-modal id="dlgSubmitOld" class="dlg">
+
+
+    <div fxFlex fxLayout="column" class="dialog1">
+ 
+    <h1>Submit</h1>
+  
+  
+  <div  fxLayout="row" fxLayoutAlign="start start" >
+  <input  id="declare" name="ai" type="checkbox"  [(ngModel)] = "declareChk" />
+   <label  for="declare">I declare the infomation provided by me to be true.</label>
+</div>
+<div  fxLayout="row">
+   <input  id="share" name="share" type="checkbox" [(ngModel)] = "shareChk" />
+   <label  for="share">I allow for my information to be shared with prospective client\s.</label>
+</div>     
+
+<br>
+
+
+
+<div class="checkboxes">
+    <label class="lbl" for="x"><input type="checkbox" id="declare" [(ngModel)] = "declareChk" /> <span>I declare the infomation provided by me to be true.</span></label>
+    <br>
+    <label class="lbl" for="y"><input type="checkbox" id="y"  [(ngModel)] = "shareChk" /> <span>I allow for my information to be shared with prospective client\s</span></label>
+
+  </div>
+  <br>
+
+  <div *ngIf="docs.length > 0" class='docs'>  Documents to be uploaded : </div>
+   <ol>
+       <div *ngFor="let doc of docs;"> 
+                <li>     {{doc.docTable}} :  {{doc.docName}}     </li>
+       </div>
+   </ol>
+
+<div  fxLayout="row" fxLayoutAlign="end center" class="btn" >
+    <button  (click)="cancelSubmit();">Cancel</button>
+    <button  [disabled]="disableSubmit()" (click)="okSubmit();">Ok</button>
+</div>
+    </div>
+  
+ </jw-modal> 
+ -->
+
+<!-- 
+<jw-modal id="dlgAuthOld" class="dlg"> 
+
+
+    <div fxFlex fxLayout="column" fxLayoutAlign="center center" class="dialog">
+ 
+    <div *ngIf="dlgAuthMode===1">
+    
+    <h1>LogIn via Email</h1>
+     <p>
+        Please provide an email address to receive an authorisation pin for access.   
+     </p>
+
+
+     <div fxLayout="row" >
+        <div fxLayout="column" >
+      <label for="email">Email</label>
+      <input  id="email" name="email" type="text" [(ngModel)] = "email" />
+
+    </div>
+</div>
+    <div  fxLayout="row" fxLayoutAlign="end center" class="btn" >
+        <button  (click)="onAuthEmail();">Ok</button>
+    </div> 
+    <label for="email">Email Address</label>
+     <input id="email" name="email" type="text" [(ngModel)] = "email">
+
+            <div  fxLayout="row" fxLayoutAlign="end center" class="btn" >
+                    <button  (click)="onAuthEmail();">Ok</button>
+            </div> -->
+
+<!--      
+</div>
+     <div *ngIf="dlgAuthMode===2">
+
+        <h1>Provide PIN</h1>
+        <p>
+            An authorisation PIN code has been sent to {{email}}. 
+            
+         </p>
+
+
+
+        <div fxLayout="row" >
+            <div fxLayout="column" >
+          <label for="email">Enter PIN Code</label>
+          <input id="pin" name="pin" type="text" [(ngModel)] = "pin">
+
+    
+        </div>
+    </div>
+
+        <div  fxLayout="row" fxLayoutAlign="end center" class="btn" >
+            <button  (click)="onAuthClose();">Ok</button>
+        </div>
+    </div>
+
+
+</div>
+ </jw-modal> -->   
