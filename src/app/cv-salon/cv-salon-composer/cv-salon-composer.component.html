@@ -263,7 +263,7 @@
 
 
 
-    <label  *ngIf="!newExp" class="labelData" for="exp">Select Certification</label>
+    <label  *ngIf="!newExp" class="labelData" for="exp">Select Experience</label>
     <select *ngIf="!newExp" class="inputData" id="exp" name="exp" (change)="onSelExp('cvSalon',$event.target.value)" [(ngModel)]="exp">
       <option [value]="exp" *ngFor="let exp of cboExps">
         {{exp}}
@@ -271,7 +271,7 @@
     </select>
 
 
-    <label *ngIf="newExp" for="expTitle">Certification</label>
+    <label *ngIf="newExp" for="expTitle">Experience</label>
     <input *ngIf="newExp" id="expTitle" name="expTitle" type="text" [(ngModel)]="expTitle" />
 
 
@@ -305,7 +305,7 @@
 
 
 
-    <label  *ngIf="!newSkill" class="labelData" for="skill">Select Certification</label>
+    <label  *ngIf="!newSkill" class="labelData" for="skill">Select Skill</label>
     <select *ngIf="!newSkill" class="inputData" id="skill" name="skill" (change)="onSelSkill('cvSalon',$event.target.value)" [(ngModel)]="skill">
       <option [value]="skill" *ngFor="let skill of cboSkills">
         {{skill}}
@@ -313,7 +313,7 @@
     </select>
 
 
-    <label *ngIf="newSkill" for="skillTitle">Certification</label>
+    <label *ngIf="newSkill" for="skillTitle">Skill</label>
     <input *ngIf="newSkill" id="skillTitle" name="skillTitle" type="text" [(ngModel)]="skillTitle" />
 
 
@@ -357,7 +357,7 @@
 
 
 
-    <label  *ngIf="!newAcheive" class="labelData" for="acheive">Select Certification</label>
+    <label  *ngIf="!newAcheive" class="labelData" for="acheive">Select Acheivement</label>
     <select *ngIf="!newAcheive" class="inputData" id="acheive" name="acheive" (change)="onSelAcheive('cvSalon',$event.target.value)" [(ngModel)]="acheive">
       <option [value]="acheive" *ngFor="let acheive of cboAcheives">
         {{acheive}}
@@ -365,7 +365,7 @@
     </select>
 
 
-    <label *ngIf="newAcheive" for="acheiveTitle">Certification</label>
+    <label *ngIf="newAcheive" for="acheiveTitle">Acheivement</label>
     <input *ngIf="newAcheive" id="acheiveTitle" name="acheiveTitle" type="text" [(ngModel)]="acheiveTitle" />
 
 

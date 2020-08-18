@@ -167,7 +167,23 @@ export class AppComponent {
   }
 
   disableAuthEmail() {
-    return this.email == "" ? true : false;
+    
+    
+    var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+
+    if ( this.email == "" ) {
+      return true;
+    }
+    else if (this.email.length <= 5 || !EMAIL_REGEXP.test(this.email)) {
+        return  true ;
+    }
+    else {
+      return false ;
+    }
+
+
+ 
+
   }
 
   disableAuthPin() {
@@ -341,8 +357,8 @@ export class AppComponent {
       }
     }
 
-   
-    alert(JSON.stringify(objData)) ;
+
+  
 
     if (Global._id === "") {
 

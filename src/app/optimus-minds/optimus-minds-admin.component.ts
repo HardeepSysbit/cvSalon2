@@ -110,8 +110,10 @@ set careerChk(value) {
 get dramaChk() {
   return Global.dramaChk ;
 }
+
 set dramaChk(value) {
  Global.dramaChk = value ;
+ Global.makeProgramList() ;
 }
 
 get  danceChk() {
@@ -119,7 +121,8 @@ get  danceChk() {
   Global.makeProgramList() ;
 }
 set  danceChk(value) {
- Global. danceChk = value ;
+ Global.danceChk = value ;
+ Global.makeProgramList() ;
 }
 
 get itChk () {
@@ -137,6 +140,7 @@ get skillsChk() {
 }
 set skillsChk(value) {
  Global.skillsChk = value ;
+ Global.makeProgramList() ;
 }
 
 get tongueChk() {
