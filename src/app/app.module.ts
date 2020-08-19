@@ -40,7 +40,7 @@ import { ProgramfilterPipe } from './lib/programfilter.pipe';
    
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule, 
